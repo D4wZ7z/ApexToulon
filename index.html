@@ -7,89 +7,111 @@
     <title>Apex Martial Gym - Club MMA à Toulon</title>
     
     <style>
-        body {
+         body {
     margin: 0;
     padding: 0;
     background-image: url('grappling.jpg'); /* Remplacez par le nom de votre fichier */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover; /* L'image prend toute la taille du conteneur sans se répéter */
+    background-position: center; /* Centrer l'image pour qu'elle soit bien positionnée */
+    background-attachment: fixed; /* L'effet de parallaxe, l'image reste fixe lors du scroll */
     font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
     color: #fff;
     line-height: 1.6;
 }
 
 
-        /* En-tête */
-        #header {
-            background: #000000;
-            color: #d1d1d1;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 10px rgba(142, 21, 21, 0.5);
-        }
+/* En-tête */
+#header {
+    background: #000000;
+    color: #d1d1d1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(142, 21, 21, 0.5);
+    position: fixed; /* Fixe l'en-tête en haut */
+    top: 0; /* Place l'en-tête tout en haut de la page */
+    left: 0; /* Positionne l'en-tête à gauche de la page */
+    width: 100%; /* Fait en sorte que l'en-tête occupe toute la largeur de la page */
+    z-index: 1000; /* S'assure que l'en-tête est au-dessus des autres éléments */
+    padding-left: 20px; /* Ajoute un peu d'espace à gauche pour éviter le texte trop près du bord */
+    padding-right: 20px; /* Ajoute un peu d'espace à droite */
+    box-sizing: border-box; /* Inclut le padding dans le calcul de la largeur totale */
+}
 
-        #header .logo-container {
-            display: flex;
-            align-items: center;
-        }
+/* Ajout d'un espacement pour le contenu sous l'en-tête */
+body {
+    padding-top: 100px; /* Ajustez la valeur pour correspondre à la hauteur de votre en-tête */
+}
 
-        #header img {
-            height: 50px;
-            margin-right: 20px;
-        }
+/* Logo et titre de l'en-tête */
+#header .logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Empêche le logo de se réduire si l'écran est trop petit */
+}
 
-        #header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            display: inline-block;
-        }
+#header img {
+    height: 50px;
+    margin-right: 20px;
+}
 
-        /* Menu de navigation */
-        #nav-menu {
-            display: flex;
-            gap: 15px;
-        }
+#header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    display: inline-block;
+}
 
-        #nav-menu a {
-            color: #d1d1d1;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-            position: relative;
-        }
+/* Menu de navigation */
+#nav-menu {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Aligne le menu à droite */
+    flex-wrap: wrap; /* Permet de faire revenir les éléments à la ligne si besoin */
+}
 
-        #nav-menu a:hover {
-            color: #be0a0a;
-        }
+#nav-menu a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: relative;
+}
 
-        #nav-menu a::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 100%;
-            height: 2px;
-            background: #be0a0a;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
+#nav-menu a:hover {
+    color: #be0a0a;
+}
 
-        #nav-menu a:hover::after {
-            transform: scaleX(1);
-        }
+#nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #be0a0a;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+#nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+
 
         /* Contenu principal */
-        #main-content {
-            padding: 20px;
-            background-color: #040404;
-            color: #be0a0a;
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(196, 6, 6, 0.2);
-        }
+#main-content {
+    padding: 20px;
+    background-color: #060505;
+    background-size: cover; /* L'image prend toute la taille du conteneur sans se répéter */
+    background-position: center; /* Centrer l'image pour qu'elle soit bien positionnée */
+    background-attachment: fixed; /* L'effet de parallaxe, l'image reste fixe lors du scroll */
+    color: #be0a0a;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(196, 6, 6, 0.2);
+}
 
         h2 {
             color: #aa1611;
@@ -128,7 +150,7 @@
         .call-to-action {
             font-size: 1.8em;
             font-weight: bold;
-            color: #860904;
+            color: #ffffff;
             text-align: center;
             margin: 20px 0;
             animation: pulsate 1.5s infinite;
@@ -274,7 +296,7 @@
 .boutique h2 {
     font-size: 2.8em;
     font-weight: bold;
-    color: #ffbb33;
+    color: #3f3f3d;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -368,7 +390,7 @@
 .planning-tarif h2 {
     font-size: 2.8em;
     font-weight: bold;
-    color: #ffbb33;
+    color: #1f1f1e;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -388,7 +410,7 @@
     margin-top: 30px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #ffbb33;
+    color: #a5a29c;
     position: relative;
     transition: color 0.3s;
     text-decoration: none;
@@ -461,7 +483,7 @@
 .centre-interet h2 {
     font-size: 2.8em;
     font-weight: bold;
-    color: #ffbb33;
+    color: #3b3a3a;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -512,7 +534,7 @@
 
 /* Style pour chaque case */
 .localisation-box, .parking-box {
-    width: 48%; /* Chaque case occupe 48% de l'espace, pour être égales */
+    width: 10%; /* Chaque case occupe 48% de l'espace, pour être égales */
     background-color: #111; /* Fond sombre comme le reste du design */
     padding: 15px;
     border-radius: 8px;
@@ -598,6 +620,68 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Style général pour le body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Fond d'image pour la partie haute */
+.header {
+    background-image: url(''); /* Chemin de l'image de fond */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Style pour les sections générales (sections du haut avec espacement) */
+.section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0; /* Ajoute de l'espace entre les sections normales */
+}
+
+/* Style spécifique pour les sections de disciplines */
+.discipline-section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 0; /* Supprime l'espacement pour un effet relié */
+}
+
+
+
+/* Bordure entre les sections de discipline, sauf pour la dernière */
+.discipline-section:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+/* Effets au survol pour chaque titre de section */
+.section h2, .discipline-section h2 {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.section h2:hover, .discipline-section h2:hover {
+    color: #960404; /* Couleur de survol */
+}
+
+/* Centrage et style des paragraphes */
+.section p, .discipline-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
 
 
     </style>
@@ -623,23 +707,29 @@
     <!-- Contenu principal -->
     <div id="main-content">
         <div class="call-to-action">REJOIGNEZ-NOUS - FAITES VOTRE CHOIX</div>
-
+    
         <div class="section centre-interet">
             <div class="section-content">
                 <h2>Centre d'Intérêt</h2>
                 <p>
-                    Découvrez nos passions et centres d'intérêt qui nous motivent et nous inspirent dans chaque entraînement. Un mélange de discipline, de passion et de dépassement de soi.
+                    Votre <strong>centre d’entrainement de combat</strong> sur Toulon vous accueille du Lundi au Samedi toute l’année pour vous faire progresser dans la discipline de votre choix. Entraînez-vous avec des professeurs diplômés et expérimentés afin de progresser en toute sécurité. Entre <strong>MMA</strong>, <strong>Boxe Anglaise</strong>, <strong>Grappling</strong>, <strong>Jiu Jitsu Brésilien</strong> & <strong>Préparation Physique</strong>, petits et grands apprennent dans le respect et la bienveillance.
                 </p>
             </div>
         </div>
+    </div>
+    
         
 
         <div class="section planning-tarif">
             <div class="section-content">
+                <h2>
+                    <img src="zizi.png" />
+                </h2>
                 <h2>Planning - Tarif</h2>
                 <p>
                     Découvrez nos horaires d'entraînement et les tarifs pour rejoindre l'Apex Martial Gym. Des formules flexibles pour tous les niveaux et objectifs.
                 </p>
+               
                 <!-- Flèche cliquable -->
                 <a href="planning-tarif.html" class="arrow-link">
                     <span class="arrow">➔</span>
@@ -654,6 +744,9 @@
                 <p>
                     Explorez notre boutique et équipez-vous comme un champion ! Gants de boxe, gants MMA, protège-tibias, rashguards, leggings, shorts et autres équipements de qualité aux couleurs de l'Apex Martial Gym.
                 </p>
+                <h2>
+                    <img src="Bouclier.png" />
+                </h2>
                 <!-- Flèche cliquable -->
                 <a href="boutique.html" class="arrow-link">
                     <span class="arrow">➔</span>
@@ -664,6 +757,9 @@
         
         <div class="section">
             <h2>Localisation</h2>
+            <h2>
+                <img src="Local-Apex.png" alt="" class="parking-image">
+            </h2>
             <div class="localisation-wrapper">
                 <!-- Case de localisation -->
                 <div class="localisation-box">
@@ -685,7 +781,9 @@
                     <p>Il y a un parking à proximité au 120 Rue Félix Mayol, juste en face du gymnase.</p>
                     <p>Autres options de stationnement sont disponibles dans les rues avoisinantes.</p>
                     <!-- Ajouter une image pour indiquer l'emplacement du parking -->
-                    <img src="CARTE.jpg" alt="Emplacement du parking" class="parking-image">
+                    <h3>
+                        <img src="CARTE.jpg" alt="" class="parking-image">
+                    </h3>
                 </div>
             </div>  
         </div>
@@ -694,56 +792,58 @@
         
         
 
-        <div class="section">
+        <div class="discipline-section">
             <h2>LE MMA A TOULON</h2>
             <p>
-                Le club de MMA à Toulon ou arts martiaux mixtes est un sport de combat complet associant les sports de percutions et ceux de préhensions. La qualité pédagogique du Apex Martial Gym associe un entrainement cardio de haut niveau à la maîtrise parfaite des mouvements. Les élèves amateurs et compétiteurs de haut niveau développeront des aptitudes de concentration exceptionnelles et un mental forgé utile dans la vie de tous les jours.
+                Le club de MMA à Toulon ou arts martiaux mixtes est un sport de combat complet associant les sports de percussions et ceux de préhension. La qualité pédagogique du Apex Martial Gym associe un entraînement cardio de haut niveau à la maîtrise parfaite des mouvements. Les élèves amateurs et compétiteurs de haut niveau développeront des aptitudes de concentration exceptionnelles et un mental forgé utile dans la vie de tous les jours.
             </p>
+            <h2>
+                <img src="" alt="" class="parking-image">
+            </h2>
         </div>
-        <div class="section">
-            <h2>LA BOXE ANGLAISE A TOULON</h2>
-            <p>
-                a boxe anglaise à Toulon, aussi appelée le noble art, est un sport de combat dans lequel deux adversaires, de même catégorie de poids et de même sexe, se rencontrent sur un ring, munis de gants rembourrés afin de limiter le risque de coupure, et s’échangent des coups de poings, portés au visage et au buste.
-
-Au Apex Martial Gym cette discipline est omniprésente. Son enseignement est la base de tous nos cours. Si vous ne savez pas par où commencer, la Boxe anglaise est certainement un bon point de départ.
-            </p>
-        </div>
-        <div class="section">
+            
+        <div class="discipline-section">
             <h2>LE JIU JITSU BRÉSILIEN A TOULON</h2>
             <p>
-                
-
-Le Jiu-Jitsu Brésilien ou JJB est un art martial et un sport de combat basé sur le grappling dont le thème central est la capacité à contrôler un adversaire qui résiste, de manière à le forcer à se soumettre.
-
-Dans la mesure où le contrôle est généralement plus facile au sol qu’en position debout, une grande partie des techniques de Jiu-Jitsu Brésilien est centrée sur la capacité à amener l’adversaire au sol et à lutter pour des positions de contrôle dominantes à partir desquelles l’adversaire peut être rendu inoffensif.
-
-La promesse de la discipline est de pouvoir contrôler et surmonter un adversaire de plus grande taille, plus fort et plus agressif. L’idée est donc d’utiliser un effet de levier, une prise et une position supérieures sur votre adversaire.
-
+                Le Jiu-Jitsu Brésilien ou JJB est un art martial et un sport de combat basé sur le grappling dont le thème central est la capacité à contrôler un adversaire qui résiste, de manière à le forcer à se soumettre.
+            </p>
+            <p>
+                Dans la mesure où le contrôle est généralement plus facile au sol qu’en position debout, une grande partie des techniques de Jiu-Jitsu Brésilien est centrée sur la capacité à amener l’adversaire au sol et à lutter pour des positions de contrôle dominantes à partir desquelles l’adversaire peut être rendu inoffensif.
+            </p>
+            <p>
+                La promesse de la discipline est de pouvoir contrôler et surmonter un adversaire de plus grande taille, plus fort et plus agressif. L’idée est donc d’utiliser un effet de levier, une prise et une position supérieures sur votre adversaire.
             </p>
         </div>
-        <div class="section">
+        
+        <div class="discipline-section">
             <h2>LE GRAPPLING A TOULON</h2>
             <p>
-                
-
-Le Grappling (Jiu Jitsu Brésilien sans Kimono) est un style de lutte importé du Brésil qui démarre debout et se termine au sol.
-
-L’objectif est de ramener l’adversaire au sol grâce à des projections de style Judo ou lutte puis de finaliser l’adversaire au sol grâce à une panoplie très large de techniques de soumissions (clés de bras, étranglements, clés de cheville, compressions musculaires…).
-
-Le Grappling connait un essor considérable dans le monde des arts martiaux depuis quelques années, notamment grâce au développement du MMA.
-
-Les combattants se sont vite rendu compte qu’il fallait avoir une connaissance complète du sol s’ils voulaient soumettre leurs adversaires.
-
-Pour les combattants professionnels ou amateurs (judokas, lutteurs, combattants pieds poings), le Grappling s’avère particulièrement efficace pour développer des techniques d’amener au sol (take downs) et apprendre à soumettre au sol.
-
+                Le Grappling (Jiu Jitsu Brésilien sans Kimono) est un style de lutte importé du Brésil qui démarre debout et se termine au sol.
+            </p>
+            <p>
+                L’objectif est de ramener l’adversaire au sol grâce à des projections de style Judo ou lutte puis de finaliser l’adversaire au sol grâce à une panoplie très large de techniques de soumissions (clés de bras, étranglements, clés de cheville, compressions musculaires…).
+            </p>
+            <p>
+                Le Grappling connait un essor considérable dans le monde des arts martiaux depuis quelques années, notamment grâce au développement du MMA.
+            </p>
+            <p>
+                Les combattants se sont vite rendu compte qu’il fallait avoir une connaissance complète du sol s’ils voulaient soumettre leurs adversaires.
+            </p>
+            <p>
+                Pour les combattants professionnels ou amateurs (judokas, lutteurs, combattants pieds poings), le Grappling s’avère particulièrement efficace pour développer des techniques d’amener au sol (take downs) et apprendre à soumettre au sol.
             </p>
         </div>
-        <div class="section">
+        
+        <div class="discipline-section">
             <h2>KICK BOXING A TOULON</h2>
             <p>
-                La boxe pieds poings à Toulon et ou kick-boxing à Toulon est une discipline sportive appartenant au groupe des boxes pieds-poings (BPP) développée au début des années 1960 par les Américains, ou « kick-boxing américain » (avec coup de pied circulaire en ligne basse – uniquement sur la cuisse) et parallèlement à la même époque par les Japonais, appelé « kick-boxing japonais » (avec tout type de coup de pied sur le membre inférieur, coups de genou direct, coups de coude et projections de judo). Cette dernière forme a pris un envol international dans les années 1990 et dénommée « kickboxing K1 » (avec la suppression des coups de coude et projections de lutte).
+                La boxe pieds poings à Toulon et ou kick-boxing à Toulon est une discipline sportive appartenant au groupe des boxes pieds-poings (BPP) développée au début des années 1960 par les Américains, ou « kick-boxing américain » (avec coup de pied circulaire en ligne basse – uniquement sur la cuisse) et parallèlement à la même époque par les Japonais, appelé « kick-boxing japonais » (avec tout type de coup de pied sur le membre inférieur, coups de genou direct, coups de coude et projections de judo).
+            </p>
+            <p>
+                Cette dernière forme a pris un envol international dans les années 1990 et dénommée « kickboxing K1 » (avec la suppression des coups de coude et projections de lutte).
             </p>
         </div>
+        
 
         <div class="section">
             <h2>Contact</h2>
