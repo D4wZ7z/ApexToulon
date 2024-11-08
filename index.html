@@ -8,13 +8,17 @@
     
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-            color: #fff;
-            line-height: 1.6;
-        }
+    margin: 0;
+    padding: 0;
+    background-image: url('grappling.jpg'); /* Remplacez par le nom de votre fichier */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
 
         /* En-tête */
         #header {
@@ -80,7 +84,7 @@
         /* Contenu principal */
         #main-content {
             padding: 20px;
-            background-color: #111;
+            background-color: #040404;
             color: #be0a0a;
             margin: 20px;
             border-radius: 10px;
@@ -153,7 +157,7 @@
 
         /* Style pour les informations de contact */
         .contact-info {
-            color: #fff;
+            color: #ffffff;
             font-size: 1em;
             margin-left: 15px;
             line-height: 1.5;
@@ -244,7 +248,7 @@
 
 /* Section de la boutique */
 .boutique {
-    background: linear-gradient(145deg, #2c0101, #000000);
+    background: linear-gradient(145deg, #000000, #000000);
     padding: 40px;
     margin: 30px 0;
     border-radius: 15px;
@@ -499,6 +503,103 @@
 }
 
 
+/* Wrapper qui contient les deux cases */
+.localisation-wrapper {
+    display: flex;
+    justify-content: space-between; /* Permet de mettre les cases côte à côte */
+    gap: 20px; /* Espace entre les cases */
+}
+
+/* Style pour chaque case */
+.localisation-box, .parking-box {
+    width: 48%; /* Chaque case occupe 48% de l'espace, pour être égales */
+    background-color: #111; /* Fond sombre comme le reste du design */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(196, 6, 6, 0.2);
+    color: #fff;
+}
+
+/* Ajustement pour les petites tailles d'écran (mobile) */
+@media (max-width: 768px) {
+    .localisation-wrapper {
+        flex-direction: column; /* Passe les cases en mode colonne sur petits écrans */
+        gap: 10px; /* Réduit l'espace entre les cases */
+    }
+
+    .localisation-box, .parking-box {
+        width: 100%; /* Les cases prennent toute la largeur disponible */
+    }
+}
+
+.parking-box {
+    background: #111;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(96, 2, 2, 0.2);
+    color: #fff;
+}
+
+.parking-box h3 {
+    font-size: 1.5em;
+    color: #f5f5f5;
+}
+
+.parking-box p {
+    font-size: 1.1em;
+    color: #dcdcdc;
+}
+
+.parking-image {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(139, 4, 4, 0.2);
+}
+
+
+/* Effet de survol spécifique pour la section "Localisation" */
+.localisation-box:hover,
+.parking-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(196, 6, 6, 0.4);
+}
+
+/* Remettre le fond dégradé sur la "Localisation" uniquement */
+.localisation-box, .parking-box {
+    width: 48%;
+    background-color: #111; /* Fond sombre pour la section localisation */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(196, 6, 6, 0.2);
+    color: #fff;
+}
+
+/* Effet de survol global pour d'autres sections avec fond dégradé rouge/noir */
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(174, 10, 10, 0.2);
+}
+
+/* Changer l'effet de survol uniquement pour "Localisation" et "Parking" */
+.localisation-box:hover, .parking-box:hover {
+    background: linear-gradient(145deg, #000000, #4c0404);  /* Dégradé rouge/noir */
+    color: #fff;
+}
+
+/* Style de l'image dans le parking */
+.parking-image {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
     </style>
 </head>
 
@@ -563,11 +664,35 @@
         
         <div class="section">
             <h2>Localisation</h2>
-            <p>
-                Nous nous situons à 125 Rue Félix Mayol, 83200 Toulon, France
-            </p>
-            <img src="local.png" alt="Logo Apex Martial Gym">
+            <div class="localisation-wrapper">
+                <!-- Case de localisation -->
+                <div class="localisation-box">
+                    <p>Nous nous situons à 125 Rue Félix Mayol, 83200 Toulon, France</p>
+                    <!-- Intégration de la carte Google Maps -->
+                    <div class="google-map">
+                        <iframe loading="lazy"
+                                src="https://maps.google.com/maps?q=125%20Rue%20F%C3%A9lix%20Mayol%2C%2083200%20Toulon&amp;t=m&amp;z=17&amp;output=embed&amp;iwloc=near"
+                                title="125 Rue Félix Mayol, 83200 Toulon"
+                                aria-label="125 Rue Félix Mayol, 83200 Toulon"
+                                width="100%" height="450" style="border:0;">
+                        </iframe>
+                    </div>
+                </div>
+        
+                <!-- Nouvelle case : Où se garer -->
+                <div class="parking-box">
+                    <h3>Où se garer ?</h3>
+                    <p>Il y a un parking à proximité au 120 Rue Félix Mayol, juste en face du gymnase.</p>
+                    <p>Autres options de stationnement sont disponibles dans les rues avoisinantes.</p>
+                    <!-- Ajouter une image pour indiquer l'emplacement du parking -->
+                    <img src="CARTE.jpg" alt="Emplacement du parking" class="parking-image">
+                </div>
+            </div>  
         </div>
+        
+        
+        
+        
 
         <div class="section">
             <h2>LE MMA A TOULON</h2>
@@ -621,30 +746,30 @@ Pour les combattants professionnels ou amateurs (judokas, lutteurs, combattants 
         </div>
 
         <div class="section">
-            <h2>Contact </h2>
+            <h2>Contact</h2>
             <p>
                 Une question ? Besoin de plus d'informations ? Contactez-nous, et nous serons ravis de vous aider à débuter votre parcours au sein de notre club.
             </p>
-
+        
             <!-- Logos et informations de contact -->
             <div class="social-icons">
-                <a href="https://www.instagram.com/apextoulon/" target="_blank">
-                    <img src="proxy-image-1.png" alt="Logo Instagram"> Instagram
+                <a href="https://www.instagram.com/apextoulon/" target="_blank" class="social-link">
+                    <img src="proxy-image-1.png" alt="Logo Instagram"> 
                 </a>
-                <a href="https://www.facebook.com/apextoulon" target="_blank">
-                    <img src="proxy-image.png" alt="Logo Facebook"> Facebook
+                <a href="https://www.facebook.com/apextoulon" target="_blank" class="social-link">
+                    <img src="proxy-image.png" alt="Logo Facebook"> 
                 </a>
-                <a href="mailto:apexmartialgym@gmail.com">
+                <a href="mailto:apexmartialgym@gmail.com" class="social-link">
                     <img src="proxy-mail.png" alt="Logo Mail"> apexmartialgym@gmail.com
                 </a>
-                <div class="contact-info">
-                    <div>Téléphone: <a href="tel:+33661506679">06 61 50 66 79</a></div>
-                </div>
+            </div>
+        
+            <!-- Informations supplémentaires -->
+            <div class="contact-info">
+                <div>Téléphone: <a href="tel:+33661506679">06 61 50 66 79</a></div>
             </div>
         </div>
-    </div>
-
-    <!-- Pied de page -->
+          <!-- Pied de page -->
     <div id="footer">
         &copy; 2024 Apex Martial Gym - Tous droits réservés.
     </div>
