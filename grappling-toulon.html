@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apex Martial Gym - Votre centre d’entraînement de combat à Toulon.">
+    <title>Apex Martial Gym - Club MMA à Toulon</title>
+    
+    <style>
+         body {
+    margin: 0;
+    padding: 0;
+    background-image: url('image-apex2/grappling-jjb/MG_2512.jpg'); /* Remplacez par le nom de votre fichier */
+    background-size: cover; /* L'image prend toute la taille du conteneur sans se répéter */
+    background-position: center; /* Centrer l'image pour qu'elle soit bien positionnée */
+    background-attachment: fixed; /* L'effet de parallaxe, l'image reste fixe lors du scroll */
+    font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 1.6;
+}
+
+
+/* En-tête */
+#header {
+    background: #000000;
+    color: #d1d1d1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(2, 111, 26, 0.5);
+    position: fixed; /* Fixe l'en-tête en haut */
+    top: 0; /* Place l'en-tête tout en haut de la page */
+    left: 0; /* Positionne l'en-tête à gauche de la page */
+    width: 100%; /* Fait en sorte que l'en-tête occupe toute la largeur de la page */
+    z-index: 1000; /* S'assure que l'en-tête est au-dessus des autres éléments */
+    padding-left: 20px; /* Ajoute un peu d'espace à gauche pour éviter le texte trop près du bord */
+    padding-right: 20px; /* Ajoute un peu d'espace à droite */
+    box-sizing: border-box; /* Inclut le padding dans le calcul de la largeur totale */
+}
+
+@media (max-width: 768px) {
+    /* Censure les éléments dans l'en-tête pour les petits écrans */
+    #header {
+        justify-content: center; /* Centre le contenu */
+    }
+
+    .logo-container {
+        text-align: center; /* Centre le logo et le titre */
+    }
+
+    #nav-menu {
+        display: flex;
+        justify-content: center; /* Centre les éléments du menu de navigation */
+        width: 100%;
+    }
+
+    #nav-menu a {
+        margin: 0 10px; /* Ajoute de l'espace entre les éléments du menu */
+    }
+}
+
+
+
+body {
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+
+#header {
+    padding: 10px 20px; /* Ajuste le padding pour les petits écrans */
+}
+
+#header h1 {
+    font-size: 2.5em; /* Taille du titre pour les écrans larges */
+}
+
+#nav-menu {
+    flex-direction: row; /* Aligne le menu horizontalement sur les grands écrans */
+}
+
+#main-content {
+    padding: 20px;
+    margin: 20px; /* Ajuste la marge pour les écrans plus petits */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(2, 111, 26, 0.5);
+}
+
+
+.section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+}
+
+
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column; /* Aligne les éléments de l'en-tête verticalement */
+        padding: 10px; /* Réduit le padding pour les petits écrans */
+    }
+
+    #nav-menu {
+        flex-direction: column; /* Aligne les éléments du menu verticalement */
+        gap: 10px; /* Réduit l'espace entre les éléments du menu */
+    }
+
+    #main-content {
+        margin: 10px; /* Réduit la marge pour les petits écrans */
+        padding: 10px; /* Réduit le padding pour le contenu principal */
+    }
+
+    .section {
+        padding: 10px; /* Réduit le padding des sections */
+    }
+
+    /* Ajustements supplémentaires pour les images */
+    img {
+        max-width: 100%; /* Assure que les images ne débordent pas */
+        height: auto; /* Garde le ratio d'aspect */
+    }
+}
+
+@media (max-width: 480px) {
+    #header h1 {
+        font-size: 1.8em; /* Réduit la taille du titre pour les très petits écrans */
+    }
+
+    #nav-menu a {
+        font-size: 1.2em; /* Ajuste la taille des liens dans le menu */
+    }
+
+    .section {
+        padding: 5px; /* Réduit le padding des sections pour les très petits écrans */
+    }
+}
+
+/* Ajout d'un espacement pour le contenu sous l'en-tête */
+body {
+    padding-top: 100px; /* Ajustez la valeur pour correspondre à la hauteur de votre en-tête */
+}
+
+/* Logo et titre de l'en-tête */
+#header .logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Empêche le logo de se réduire si l'écran est trop petit */
+}
+
+#header img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+#header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    display: inline-block;
+}
+
+/* Menu de navigation */
+#nav-menu {
+    display: flex;
+    gap: 15px;
+    margin-left: auto; /* Aligne le menu à droite */
+    flex-wrap: wrap; /* Permet de faire revenir les éléments à la ligne si besoin */
+}
+
+#nav-menu a {
+    color: #d1d1d1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: relative;
+}
+
+#nav-menu a:hover {
+    color: #13b910;
+}
+
+#nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #026d20;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+#nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+        /* Contenu principal */
+#main-content {
+    padding: 20px;
+    background-color: #060505;
+    background-size: cover; /* L'image prend toute la taille du conteneur sans se répéter */
+    background-position: center; /* Centrer l'image pour qu'elle soit bien positionnée */
+    background-attachment: fixed; /* L'effet de parallaxe, l'image reste fixe lors du scroll */
+    color: #0d6a04;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(2, 111, 26, 0.5);
+}
+
+        h2 {
+            color: #016404;
+            margin-top: 20px;
+        }
+
+        /* Sections avec effet de survol */
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #000000;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #c9bdbd;
+            position: relative;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+        }
+
+        /* Pied de page */
+        #footer {
+            text-align: center;
+            padding: 10px;
+            background: #111;
+            color: #ffffff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9em;
+        }
+
+        /* Appel à l'action */
+        .call-to-action {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ffffff;
+            text-align: center;
+            margin: 20px 0;
+            animation: pulsate 1.5s infinite;
+        }
+
+        /* Animation de pulsation */
+        @keyframes pulsate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Style pour les logos des réseaux sociaux */
+.social-icons {
+    display: flex;
+    justify-content: center;  /* Centrer les logos horizontalement */
+    align-items: center;      /* Centrer les logos verticalement */
+    gap: 20px;                /* Espacement entre les logos */
+    margin-top: 20px;
+}
+
+.social-icons img {
+    height: 40px;
+    width: 40px;
+}
+
+/* Style pour les informations de contact */
+.contact-info {
+    color: #ffffff;
+    font-size: 1em;
+    margin-left: 15px;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: #0d6a04;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info div {
+    margin-bottom: 5px;
+}
+
+
+        /* Media Queries pour mobile */
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            #header h1 {
+                font-size: 1.8em;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            #nav-menu {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #nav-menu a {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            .section {
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+
+            .social-icons {
+                flex-direction: row;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .contact-info {
+                font-size: 0.9em;
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+        /* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+    /* Centrer le call-to-action */
+    .call-to-action {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Adapter les sections */
+    .section {
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* Ajuster les titres dans les sections */
+    .section-content h2 {
+        font-size: 24px;
+    }
+
+    .section-content p {
+        font-size: 16px;
+    }
+
+    /* Menu de navigation vertical sur petits écrans */
+    #nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #nav-menu a {
+        font-size: 1.2em;
+    }
+
+    /* Réduire les marges et les paddings pour plus de lisibilité */
+    #header {
+        padding: 15px;
+    }
+
+    /* Adapter le logo */
+    #header img {
+        height: 40px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adapter le call-to-action pour les très petits écrans */
+    .call-to-action {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+  
+    /* Ajuster les titres et paragraphes encore plus pour petits écrans */
+    .section-content h2 {
+        font-size: 20px;
+    }
+
+    .section-content p {
+        font-size: 14px;
+    }
+
+    /* Menu de navigation plus compact */
+    #nav-menu a {
+        font-size: 1.1em;
+    }
+
+    /* Ajuster le footer pour les petits écrans */
+    #footer {
+        font-size: 0.8em;
+    }
+}
+
+
+
+/* Section Planning - Tarif */
+.planning-tarif {
+    background: linear-gradient(145deg, #000000, #013003);
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(2, 111, 26, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.planning-tarif:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.section-content {
+    text-align: center;
+    color: #f5f5f5;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.planning-tarif h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #1f1f1e;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.planning-tarif p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.arrow-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #a5a29c;
+    position: relative;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.arrow-link:hover {
+    color: #f5f5f5;
+}
+
+.arrow-link .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.arrow-link:hover .arrow {
+    transform: translateX(10px);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .planning-tarif {
+        padding: 30px 15px;
+        margin: 20px 0;
+    }
+
+    .planning-tarif h2 {
+        font-size: 2.2em;
+    }
+
+    .planning-tarif p {
+        font-size: 1em;
+    }
+}
+
+/* Section Centre d'Intérêt */
+.centre-interet {
+    background: linear-gradient(145deg, #013003, #030303);
+    padding: 40px;
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(2, 111, 26, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.centre-interet:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(2, 111, 26, 0.5);
+}
+
+.section-content {
+    text-align: center;
+    color: #f5f5f5;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.centre-interet h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #3b3a3a;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.centre-interet p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #dcdcdc;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .centre-interet {
+        padding: 30px 15px;
+        margin: 20px 0;
+    }
+
+    .centre-interet h2 {
+        font-size: 2.2em;
+    }
+
+    .centre-interet p {
+        font-size: 1em;
+    }
+}
+
+
+/* Le wrapper qui contient les deux cases */
+.localisation-wrapper {
+    display: flex;
+    justify-content: space-between; 
+    gap: 20px; /* Espace entre les cases */
+}
+
+/* Style pour chaque case */
+.localisation-box, .parking-box {
+    width: 48%; 
+    background-color: #111; 
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(2, 111, 26, 0.5);
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Image dans chaque case */
+.parking-image {
+    width: 100%; /* L'image prend toute la largeur de la case */
+    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+}
+
+/* Le Modal (fenêtre en grand) */
+.modal {
+    display: none; /* Par défaut, le modal est caché */
+    position: fixed; /* Rester fixé à l'écran */
+    z-index: 1000; /* Au-dessus de tout le reste */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 111, 26, 0.5); /* Fond sombre transparent */
+}
+
+/* Contenu du modal (l'image agrandie) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* L'image occupe 80% de la largeur de l'écran */
+    max-width: 700px; /* Limite la largeur à 700px */
+}
+
+/* Le bouton de fermeture du modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* Style du texte du caption (optionnel) */
+#caption {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+
+/* Ajustement pour les petites tailles d'écran (mobile) */
+@media (max-width: 768px) {
+    .localisation-wrapper {
+        flex-direction: column; /* Passe les cases en mode colonne sur petits écrans */
+        gap: 10px; /* Réduit l'espace entre les cases */
+    }
+
+    .localisation-box, .parking-box {
+        width: 100%; /* Les cases prennent toute la largeur disponible */
+    }
+}
+
+.parking-box {
+    background: #111;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+    color: #fff;
+}
+
+.parking-box h3 {
+    font-size: 1.5em;
+    color: #f5f5f5;
+}
+
+.parking-box p {
+    font-size: 1.1em;
+    color: #dcdcdc;
+}
+
+.parking-image {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+}
+
+
+/* Effet de survol spécifique pour la section "Localisation" */
+.localisation-box:hover,
+.parking-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+}
+
+/* Remettre le fond dégradé sur la "Localisation" uniquement */
+.localisation-box, .parking-box {
+    width: 48%;
+    background-color: #111; /* Fond sombre pour la section localisation */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(2, 111, 26, 0.5);
+    color: #fff;
+}
+
+/* Effet de survol global pour d'autres sections avec fond dégradé rouge/noir */
+.section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+}
+
+/* Changer l'effet de survol uniquement pour "Localisation" et "Parking" */
+.localisation-box:hover, .parking-box:hover {
+    background: linear-gradient(145deg, #000000, #016404);  /* Dégradé rouge/noir */
+    color: #fff;
+}
+
+/* Style de l'image dans le parking */
+.parking-image {
+    width: 100%; /* L'image prend toute la largeur de la section */
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(2, 111, 26, 0.5);
+}
+
+/* Style général pour le body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Fond d'image pour la partie haute */
+.header {
+    background-image: url(''); /* Chemin de l'image de fond */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Style pour les sections générales (sections du haut avec espacement) */
+.section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 20px 0; /* Ajoute de l'espace entre les sections normales */
+}
+
+/* Style spécifique pour les sections de disciplines */
+.discipline-section {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 0; /* Supprime l'espacement pour un effet relié */
+}
+
+
+
+/* Bordure entre les sections de discipline, sauf pour la dernière */
+.discipline-section:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+/* Effets au survol pour chaque titre de section */
+.section h2, .discipline-section h2 {
+    font-size: 24px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.section h2:hover, .discipline-section h2:hover {
+    color: #016404; /* Couleur de survol */
+}
+
+/* Centrage et style des paragraphes */
+.section p, .discipline-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section pour les tarifs */
+.section-tarifs {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #000000;
+}
+
+/* Style pour chaque carte de tarif */
+.carte-tarif {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carte-tarif h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.carte-tarif .sous-titre {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.carte-tarif .prix {
+    font-size: 40px;
+    color: #000;
+    font-weight: bold;
+}
+
+.carte-tarif .prix span {
+    font-size: 16px;
+    color: #666;
+    font-weight: normal;
+}
+
+.carte-tarif .details {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    color: #454545;
+}
+
+.carte-tarif .details li {
+    font-size: 16px;
+    margin: 10px 0;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.carte-tarif .bouton-inscription {
+    background-color: #d32f2f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.carte-tarif .bouton-inscription:hover {
+    background-color: #b71c1c;
+}
+
+.carte-tarif .info-sup {
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+
+/* Ajustements pour les très petits écrans (mobile) */
+@media (max-width: 480px) {
+    #header {
+        padding: 5px 10px; /* Réduit le padding pour diminuer la hauteur */
+    }
+
+    #header h1 {
+        font-size: 1.2em; /* Réduit la taille de la police du titre */
+        margin: 5px 0; /* Réduit l'espace vertical */
+    }
+
+    #nav-menu {
+        flex-direction: column; /* Passe le menu en colonne */
+        gap: 5px; /* Réduit l'espacement entre les liens */
+    }
+
+    #nav-menu a {
+        font-size: 1em; /* Réduit la taille de la police des liens */
+    }
+
+    img {
+        height: 40px; /* Réduit la taille du logo */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+   <!-- En-tête -->
+   <div id="header">
+    <div class="logo-container">
+        <!-- Lien autour du logo -->
+        <a href="index.html">
+            <img src="Acropped-apex.png" alt="Logo Apex Martial Gym">
+        </a>
+        <h1>Apex Martial Gym</h1>
+    </div>
+    <nav id="nav-menu">
+        <a href="mma-toulon.html">MMA</a>
+        <a href="grappling-toulon.html">Grappling</a>
+        <a href="grappling-toulon.html">Jiu Jitsu Brésilien</a>
+        <a href="kickboxing-toulon.html">Kick Boxing</a>
+        <a href="boxethai-toulon.html">Boxe Thaï</a>
+    </nav>
+</div>
+
+
+
+    <!-- Contenu principal -->
+    <div id="main-content">
+        <div class="call-to-action">REJOIGNEZ-NOUS - FAITES VOTRE CHOIX</div>
+    
+        <div class="section centre-interet">
+            <div class="section-content">
+                <h2>
+					<img src="image-apex2/grappling-jjb/explication-jjb-grappling-preview.png" />
+				</h2>
+                <p>
+                
+                    Le <strong>Jiu-Jitsu Brésilien</strong> ou <strong>JJB</strong> est un art martial et un sport de combat basé sur le grappling dont le thème central est la capacité à contrôler un adversaire qui résiste, de manière à le forcer à se soumettre.
+
+                    Dans la mesure où le contrôle est généralement plus facile au sol qu’en position debout, une grande partie des techniques de Jiu-Jitsu Brésilien est centrée sur la capacité à <strong>amener l’adversaire au sol</strong> et à lutter pour des <strong>positions de contrôle dominantes</strong> à partir desquelles l’adversaire peut être rendu inoffensif.
+                    
+                    La promesse de la discipline est de pouvoir <strong>contrôler</strong> et <strong>surmonter un adversaire de plus grande taille</strong>, plus fort et plus agressif. L’idée est donc d’utiliser un effet de levier, une prise et une position supérieures sur votre adversaire.
+                    
+                    Le Jiu-Jitsu Brésilien est devenu très populaire grâce aux compétitions de <strong>MMA</strong>, en particulier après une série de performances du combattant de Royce Gracie aux tous débuts de l’UFC (Ultimate Fighting Championship) où il a affronté des compétiteurs de différents horizons d’arts martiaux dans le tournoi « no holds barred », devenant ainsi le premier champion de la promotion du combat. Cet événement a prouvé l’efficacité du <strong>Jiu-Jitsu Brésilien</strong> et a contribué à sensibiliser le monde entier, devenant ainsi l’une des raisons de la croissance de ce sport.
+                    x combattants et tous les coups de pied, de poing, de genou, de coude ou immobilisation, technique de soumission de projection et techniques de chute au sol sont permis, à l’exception des morsures et coups au niveau des yeux qui sont interdits. <strong>Dans un combat de MMA</strong>, le vainqueur est choisi par KO, décision des juges ou immobilisation.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+    
+        
+
+        <div class="section planning-tarif">
+            <div class="section-content">
+                <h2>
+                    <img src="image-apex2/grappling-jjb/coach-presentation-preview.png" />
+                </h2>
+                <h2></h2>
+                <p>
+                    <img src="image-apex2/grappling-jjb/2COACH-JJB.jpg" />
+                </p>
+               
+                <!-- Flèche cliquable -->
+                <p>
+                    
+
+
+
+                    Pratiquant de <strong>Jiu Jitsu Brésilien</strong> et <strong>Grappling</strong> depuis 11 ans et professeur depuis 5 ans, il enseigne le JJB avec passion et pédagogie. Compétiteur actif sur le circuit national et international, il saura vous donnez goût à la compétition.
+
+                    <strong>Champion de France & en équipe de France Newaza 2022.<strong>
+                    
+
+                </p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Planning</h2>
+            <div class="localisation-wrapper">
+                <!-- Case de localisation -->
+                <div class="localisation-box">
+                    <h3>
+                        <strong>Adulte</strong>
+                    </h3>
+                    <p>
+                        <!-- L'image qui ouvre le modal -->
+                        <img src="image-apex2/grappling-jjb/PLANNING-JJB-GRAPPLING-1.jpg" alt="Planning MMA Adulte" class="parking-image" id="img-adulte">
+                    </p>
+                </div>
+                
+                <!-- Nouvelle case : Où se garer -->
+                <div class="parking-box">
+                    <h3>
+                        <strong>
+                            Ado
+                        </strong>
+                    <p>
+                        <!-- L'image qui ouvre le modal -->
+                        <img src="image-apex2/grappling-jjb/PLANNING-GRAPPLING-ADOS.jpg" alt="Planning MMA Ado" class="parking-image" id="img-ado">
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Le Modal pour afficher l'image en grand -->
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-image">
+            <div id="caption"></div>
+        </div>
+        
+        <!-- Inclusion du fichier JavaScript à la fin de la page -->
+        <script src="lightbox.js"></script>
+        
+        
+        
+        <div class="discipline-section section-tarifs">
+            <div class="carte-tarif">
+                <h3>ADULTES</h3>
+                <p class="sous-titre"></p>
+                <p class="prix">€480 <span>à l'année</span></p>
+                <ul class="details">
+                    <li>5 cours semaine</li>
+                    <li>350€ - 6 mois </li>
+                    <li>240€ - 3 mois </li>
+                </ul>
+                <a href="url-inscription.html" class="bouton-inscription">Inscription</a>
+                <p class="info-sup">Paiement en 4x sans frais
+                    Licence non incluse : supplément de 40€ si vous souhaitez la prendre 
+            </div>
+        
+            <div class="carte-tarif">
+                <h3>ADOS & ENFANTS </h3>
+                <p class="sous-titre"></p>
+                <p class="prix">€340 <span>à l'année</span></p>
+                <ul class="details">
+                    <li>2 cours semaine</li>
+                    <li>Dès 13 ans</li>
+                    <li>Enfants dès 7 ans</li>
+                </ul>
+                <a href="url-inscription.html" class="bouton-inscription">Inscription</a>
+                <p class="info-sup">Paiement en 4x sans frais
+                    Licence non incluse : supplément de 40€ si vous souhaitez la prendre 
+            </div>
+        </div>
+        
+        
+        
+        
+        
+
+        <div class="discipline-section">
+            <h2>
+                <img src="image-apex2/mma-toulon/Equipement-removebg-preview.png" alt="Planning MMA Ado" 
+            </h2>
+            <p>
+                Le club apex propose les équipements adaptés à la pratique du Kick Boxing pour les ados et adultes à des prix concurrentiels. Pour plus d’informations rendez-vous au club sur place.            <h2>
+                <img src="" alt="" class="parking-image">
+            </h2>
+            <h1>
+                KIMONO DE JJB
+            </h1>
+            <h1>
+                RASHGUARD MANCHE LONGUE
+            </h1>
+            <h1>
+                SHORT
+            </h1>
+            <h1>
+                SPAT / LEGGING  
+            </h1>
+            <h1>
+                CLAQUETTES
+            </h1>
+            <h1>
+                COQUILLE
+            </h1>
+            <h1>
+                PROTEGE DENTS
+            <h1>
+        </div>
+            
+        
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>
+                Une question ? Besoin de plus d'informations ? Contactez-nous, et nous serons ravis de vous aider à débuter votre parcours au sein de notre club.
+            </p>
+
+        
+            <!-- Logos et informations de contact -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/apextoulon/" target="_blank" class="social-link">
+                    <img src="image-apex2/proxy-image-1.png" alt="Logo Instagram"> 
+                </a>
+                <a href="https://www.facebook.com/apextoulon" target="_blank" class="social-link">
+                    <img src="image-apex2/proxy-image.png" alt="Logo Facebook"> 
+                </a>
+                <a href="mailto:apexmartialgym@gmail.com" class="social-link">
+                    <img src="image-apex2/proxy-mail.png" alt="Logo Mail"> 
+                </a>
+            </div>
+        
+            <!-- Informations supplémentaires -->
+            <div class="contact-info">
+                <div>Téléphone: <a href="tel:+33661506679">06 61 50 66 79</a></div>
+                <div>Mail: <a href="mailto:+apexmartialgym@gmail.com">apexmartialgym@gmail.com</a></div>
+            </div>
+        </div>
+        
+          <!-- Pied de page -->
+    <div id="footer">
+        &copy; 2024 Apex Martial Gym - Tous droits réservés.
+    </div>
+
+</body>
+</html>
